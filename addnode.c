@@ -1,38 +1,24 @@
 #include "monty.h"
-
 /**
- * addNodeToStack - Add a new node to the head of the stack
- * @head: Pointer to the head
- * @n: value added to the node
- */
-void addNodeToStack(stack_t **head, int n)
+ * addnode - add node to the head stack
+ * @head: head of the stack
+ * @n: new_value
+ * Return: no return
+*/
+void addnode(stack_t **head, int n)
 {
-	stack_t *newNode, *current;
 
-	newNode = malloc(sizeof(stack_t));
-	if (newNode == NULL)
-	{
-		handleMemoryAllocationError();
-	}
+	stack_t *new_node, *aux;
 
-	current = *head;
-
-	if (current)
-	{
-		current->prev = newNode;
-	}
-
-	newNode->n = n;
-	newNode->next = *head;
-	newNode->prev = NULL;
-
-	*head = newNode;
-}
-/**
- * handleMemoryAllocationError - Print an error message for memory allocation
- */
-void handleMemoryAllocationError(void)
-{
-	fprintf(stderr, "Error:  Memory allocation failure\n");
-	cleanupAndExit();
+	aux = *head;
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+	{ printf("Error\n");
+		exit(0); }
+	if (aux)
+		aux->prev = new_node;
+	new_node->n = n;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	*head = new_node;
 }

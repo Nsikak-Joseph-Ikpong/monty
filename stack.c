@@ -1,11 +1,11 @@
 #include "monty.h"
-
 /**
- * setStackMode - Set the stack mode to LIFO
- * @head: Pointer to the head
- * @counter: line number
- */
-void setStackMode(stack_t **head, unsigned int counter)
+ * f_stack - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void f_stack(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;

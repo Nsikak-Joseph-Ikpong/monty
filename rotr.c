@@ -1,11 +1,11 @@
 #include "monty.h"
-
 /**
- * rotateToBottom -  to the bottom
- * @head: pointer tot hte head
- * @counter: Line number
+  *f_rotr- rotates the stack to the bottom
+  *@head: stack head
+  *@counter: line_number
+  *Return: no return
  */
-void rotateToBottom(stack_t **head, unsigned int counter)
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
 	stack_t *copy;
 
@@ -14,12 +14,10 @@ void rotateToBottom(stack_t **head, unsigned int counter)
 	{
 		return;
 	}
-
 	while (copy->next)
 	{
 		copy = copy->next;
 	}
-
 	copy->next = *head;
 	copy->prev->next = NULL;
 	copy->prev = NULL;

@@ -7,7 +7,6 @@
 #include <fcntl.h>
 #include <string.h>
 #include <ctype.h>
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -37,7 +36,7 @@ typedef struct bus_s
 	FILE *file;
 	char *content;
 	int lifi;
-} bus_t;
+}  bus_t;
 extern bus_t bus;
 /**
  * struct instruction_s - opcode and its function
@@ -55,40 +54,25 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void performAddition(stack_t **head, unsigned int counter);
-void addNodeToStack(stack_t **head, int n);
-void f_div(stack_t **head, unsigned int counter);
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
-void handleAddError(unsigned int counter);
-void handleMemoryAllocationError(void);
-void handleStackTooShortError(unsigned int counter);
-void handleDivisionByZeroError(unsigned int counter);
-void cleanupAndExit();
-void handleUnknownInstructionError(char *op, unsigned int counter, FILE *file, char *content, stack_t **stack);
-void freeStack(stack_t *head);
-void computeMod(stack_t **head, unsigned int counter);
-void handleModError(unsigned int counter);
-void performMultiplication(stack_t **head, unsigned int counter);
-void handleMultiplicationError(unsigned int counter);
-void f_nothing(stack_t **head, unsigned int counter);
-void printCharAtTop(stack_t **head, unsigned int counter);
-void handleEmptyStackError(unsigned int counter);
-void handleValueOutOfRangeError(unsigned int counter);
-void printStack(stack_t **head, unsigned int counter);
-void printString(stack_t **head, unsigned int counter);
-void printTopElement(stack_t **head, unsigned int counter);
-void handleEmptyStackError(unsigned int counter);
-void popTopElement(stack_t **head, unsigned int counter);
-void handleEmptyStackError(unsigned int counter);
-void addNodeToStack(stack_t **head, unsigned int counter);
-void addNodeToStackHelper(stack_t **head, int n);
-void handleInvalidPushError(unsigned int counter);
-void rotateToBottom(stack_t **head, unsigned int counter);
-void rotateToTop(stack_t **head, __attribute__((unused)) unsigned int counter);
-void setStackMode(stack_t **head, unsigned int counter);
-void performSubtraction(stack_t **head, unsigned int counter);
-void handleSubtractionError(unsigned int counter);
-void swapTopTwoElements(stack_t **head, unsigned int counter);
-void handleSwapError(unsigned int counter);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+void free_stack(stack_t *head);
+void f_pop(stack_t **head, unsigned int counter);
+void f_swap(stack_t **head, unsigned int counter);
 void f_add(stack_t **head, unsigned int counter);
+void f_nop(stack_t **head, unsigned int counter);
+void f_sub(stack_t **head, unsigned int counter);
+void f_div(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
+void f_pstr(stack_t **head, unsigned int counter);
+void f_rotl(stack_t **head, unsigned int counter);
+void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
 #endif
