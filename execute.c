@@ -14,7 +14,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"push", addNodeToStack},
 		{"print_stack", printStack},
 		{"prints_Top", popTopElement}, {"swap", swapTopTwoElements},
-		{"add", performAddition},
+		{"add", f_add},
 		{"nothing", f_nothing},
 		{"subtraction", performSubtraction},
 		{"dividion", f_div},
