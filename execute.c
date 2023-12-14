@@ -14,7 +14,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"push", addNodeToStack},
 		{"print_stack", printStack},
 		{"prints_Top", popTopElement}, {"swap", swapTopTwoElements},
-		{"addition", performAddition},
+		{"add", performAddition},
 		{"nothing", f_nothing},
 		{"subtraction", performSubtraction},
 		{"dividion", f_div},
@@ -24,7 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"print_string", printString},
 		{"rotate_to_top", rotateToTop},
 		{"rotate_to_bottom", rotateToBottom},
-		{"stacks", setStackMode},
+		{"stack", setStackMode},
 		{NULL, NULL}};
 
 	unsigned int i = 0;
