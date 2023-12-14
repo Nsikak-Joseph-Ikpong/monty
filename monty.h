@@ -90,4 +90,5 @@ void performSubtraction(stack_t **head, unsigned int counter);
 void handleSubtractionError(unsigned int counter);
 void swapTopTwoElements(stack_t **head, unsigned int counter);
 void handleSwapError(unsigned int counter);
+void f_add(stack_t **head, unsigned int counter);
 #endif
